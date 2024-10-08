@@ -1,4 +1,4 @@
-image_tor := patrickod/tor
+image_tor := lucasmirandaandrade/tor
 
 .PHONY: start stop run build tor
 
@@ -19,7 +19,7 @@ tor:
 	-@docker rm -f "$@"
 	docker run -d \
 		--name "$@" \
-		-e "TZ=Europe/Berlin" \
+		-e "TZ=Etc/UTC" \
 		-p 9001:9001 \
 		$(image_tor)
 
